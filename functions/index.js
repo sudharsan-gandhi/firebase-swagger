@@ -1,7 +1,7 @@
 const functions = require('firebase-functions');
 const express = require('express');
 const app = express();
-const swag = require('./swagger.json');
+const swag = require('./test.json');
 
 
 app.get('/swagger', (req, res) => {
@@ -20,6 +20,29 @@ app.get('/swagger', (req, res) => {
 
 exports.api=functions.https.onRequest(app);
 
+
+/**
+ * @swagger
+ * /swagger:
+ *   get:
+ *     description: Get the API Document JSON through this end point
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: username
+ *         description: Username to use for login.
+ *         in: formData
+ *         required: true
+ *         type: string
+ *       - name: password
+ *         description: User's password.
+ *         in: formData
+ *         required: true
+ *         type: string
+ *     responses:
+ *       200:
+ *         description: success
+ */
 exports.swagger = functions.https.onRequest((req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
     res.json(swag)
