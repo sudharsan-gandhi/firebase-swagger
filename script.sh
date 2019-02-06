@@ -6,6 +6,6 @@ then
     echo "installation complete..."
 fi
 echo "collection swagger data"
-swagger-jsdoc-generator ./functions/config.js > "./functions/test.json"
+swagger-jsdoc-generator ./functions/config.js > "./functions/swagger.json"
 echo "updated swagger document"
 firebase deploy

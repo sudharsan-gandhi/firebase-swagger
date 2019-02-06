@@ -1,7 +1,7 @@
 const functions = require('firebase-functions');
 const express = require('express');
 const app = express();
-const swag = require('./test.json');
+const swag = require('./swagger.json');
 
 
 app.get('/swagger', (req, res) => {
