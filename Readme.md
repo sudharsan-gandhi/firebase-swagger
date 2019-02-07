@@ -61,6 +61,11 @@ $ firebase deploy
 $ # or
 $ firebase deploy --only functions # this deploys only changes with firebase functions
 ```
+To Generate and deploy the firebase functions. run the below script
+
+```
+$ ./scripts.sh
+```
 
 ### Getting the URL from firebase
 Open firebase console and go to the project -> functions
